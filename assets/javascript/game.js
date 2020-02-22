@@ -11,14 +11,12 @@ var guessesLeftText = document.getElementById("guessesLeft");
 var yourGuessesSoFarText = document.getElementById("yourGuessesSoFar");
 
 var computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-console.log(computerChoice);
 
 document.onkeyup = function (event) {
 
     var userGuess = event.key;
 
     
-    console.log(computerChoice, "computerChoice");
 
     if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x") || (userGuess === "y") || (userGuess === "z")) {
 
@@ -29,8 +27,6 @@ document.onkeyup = function (event) {
             guessesLeft--;
             yourGuessesSoFar.push(userGuess);
         }
-        console.log(wins, losses, "wins,losses");
-        console.log(guessesLeft, "guessesLeft");
         
         if (guessesLeft === 0) {
             losses++;
@@ -48,7 +44,6 @@ document.onkeyup = function (event) {
 
 function reset(){
     computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    console.log(computerChoice);
     guessesLeft = 9;
     yourGuessesSoFar = [];
 }
