@@ -15,16 +15,10 @@ var computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.
 document.onkeyup = function (event) {
 
     var userGuess = event.key;
-    console.log(userGuess);
 
     for (var i = 0; i < computerChoices.length; i++) {
-    
         
-    
-        var alph = computerChoices[i]
-        console.log(alph);
-
-
+        var alph = computerChoices[i];
 
         if (userGuess === alph) {
 
