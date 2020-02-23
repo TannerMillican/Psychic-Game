@@ -15,30 +15,39 @@ var computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.
 document.onkeyup = function (event) {
 
     var userGuess = event.key;
+    console.log(userGuess);
 
+    for (var i = 0; i < computerChoices.length; i++) {
     
-
-    if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x") || (userGuess === "y") || (userGuess === "z")) {
-
-        if (userGuess === computerChoice) {
-            wins++;
-            reset();
-        } else if (userGuess !== computerChoice) {          
-            guessesLeft--;
-            yourGuessesSoFar.push(userGuess);
-        }
         
-        if (guessesLeft === 0) {
-            losses++;
-            reset();
-        }
+    
+        var alph = computerChoices[i]
+        console.log(alph);
+
+
+
+        if (userGuess === alph) {
+
+            if (userGuess === computerChoice) {
+                wins++;
+                reset();
+            } else if (userGuess !== computerChoice) {          
+                guessesLeft--;
+                yourGuessesSoFar.push(userGuess);
+            }
+        
+            if (guessesLeft === 0) {
+                losses++;
+                reset();
+            }
         
 
 
-    winsText.textContent = "Wins:" + wins;
-    lossesText.textContent = "Losses:" + losses;
-    guessesLeftText.textContent = "Guesses Left:" + guessesLeft;
-    yourGuessesSoFarText.textContent = "Your Guesses So Far:" + yourGuessesSoFar;
+        winsText.textContent = "Wins:" + wins;
+        lossesText.textContent = "Losses:" + losses;
+        guessesLeftText.textContent = "Guesses Left:" + guessesLeft;
+        yourGuessesSoFarText.textContent = "Your Guesses So Far:" + yourGuessesSoFar;
+        }
     }
 }
 
@@ -47,5 +56,3 @@ function reset(){
     guessesLeft = 9;
     yourGuessesSoFar = [];
 }
-
-
